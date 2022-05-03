@@ -1,0 +1,15 @@
+version: "3"
+services:
+  app:
+    build: .
+    
+    #image: maxime1907/filegator
+    volumes: 
+      - ./data:/data:rw
+      - ./scripts/:/config/:rw
+      #- ./data/users.json.blank:/config/www/private/users.json.blank
+    ports:
+      - "8081:80"
+    environment:
+       FB_USERNAME: user
+       FB_PASSWORD: password
