@@ -1,7 +1,7 @@
 FROM node:16.15.0-buster
 
 RUN apt-get update
-RUN apt-get install -y curl unzip
+RUN apt-get install -y curl zip unzip rsync p7zip-full
 RUN curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
 #filebrowser -r /path/to/your/files
 
@@ -24,10 +24,12 @@ RUN mkdir -p /data
 #RUN filebrowser users add user2 $2y$10$kK216YyEwh4MnFTo.iu.VuB9YKujPJa6vKTA2Vkw78i1sApCAmA1m
 RUN filebrowser config init
 RUN cp /filebrowser.db /filebrowser.db.clone
-COPY scripts /config
 COPY package.json /config/
 WORKDIR /config/
 RUN npm i
+
+COPY scripts /config
+
 
 #CMD ["filebrowser", "-c", "/config/config.json", "-r", "/data"]
 

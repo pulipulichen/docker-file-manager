@@ -26,7 +26,7 @@ if [ $FM_PORT ]; then
 fi
 
 # npm i cron
-node /config/cron.js
+node /config/crontab.js
 # ls /config
 # cat /config/package.json
 

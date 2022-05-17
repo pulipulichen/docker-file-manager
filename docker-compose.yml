@@ -6,7 +6,10 @@ services:
     #image: maxime1907/filegator
     volumes: 
       - ./data:/data:rw
-      - ./scripts/:/config/:rw
+      - ./data:/data_source:rw
+      - ./data_target:/data_target:rw
+      - ./data_archive:/data_archive:rw
+      #- ./scripts/:/config/:rw
       #- ./data/users.json.blank:/config/www/private/users.json.blank
     ports:
       - "8081:888"
@@ -14,3 +17,6 @@ services:
        FM_USERNAME: user
        FM_PASSWORD: password
        FM_PORT: "888"
+       BACKUP_TO_REMOTE_MINUTE_INTERVAL: "30"
+       #ARCHIVE_SCHEDULE: "0 0 3 * * 0" #每週日3點備份
+       ARCHIVE_SCHEDULE: "*/5 * * * * *" #每5秒備份
