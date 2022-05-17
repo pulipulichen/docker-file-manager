@@ -1,4 +1,6 @@
-TAG=20220507-0142
+TAG=20220517-1450
 
-docker build -t pudding/docker-file-manager:$TAG .
-docker push pudding/docker-file-manager:$TAG
+REPO=docker-file-manager
+
+docker build -t pudding/$REPO:$TAG .
+docker push pudding/$REPO:$TAG

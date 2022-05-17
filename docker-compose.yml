@@ -9,7 +9,8 @@ services:
       - ./scripts/:/config/:rw
       #- ./data/users.json.blank:/config/www/private/users.json.blank
     ports:
-      - "8081:80"
+      - "8081:888"
     environment:
        FM_USERNAME: user
        FM_PASSWORD: password
+       FM_PORT: "888"

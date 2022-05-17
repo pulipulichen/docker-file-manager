@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM node:16.15.0-buster
 
 RUN apt-get update
 RUN apt-get install -y curl unzip
@@ -25,6 +25,10 @@ RUN mkdir -p /data
 RUN filebrowser config init
 RUN cp /filebrowser.db /filebrowser.db.clone
 COPY scripts /config
+COPY package.json /config/
+WORKDIR /config/
+RUN npm i
+
 #CMD ["filebrowser", "-c", "/config/config.json", "-r", "/data"]
 
 CMD ["bash", "/config/init.sh"]

@@ -1,5 +1,5 @@
 #echo 1212
-cp -f /filebrowser.db.clone /filebrowser.db
+cp -af /filebrowser.db.clone /filebrowser.db
 filebrowser config init
 cat /config/config.json
 filebrowser users add $FM_USERNAME $FM_PASSWORD
@@ -20,5 +20,15 @@ for dirname in /data/*; do
   fi
 done
 
+PORT=80
+if [ $FM_PORT ]; then
+  PORT=$FM_PORT
+fi
+
+# npm i cron
+node /config/cron.js
+# ls /config
+# cat /config/package.json
+
 # 開始執行
-filebrowser -c /config/config.json -r /data
+filebrowser -c /config/config.json -r /data -p $PORT

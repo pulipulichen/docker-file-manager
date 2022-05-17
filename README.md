@@ -5,6 +5,7 @@ Set configuration by environment variables for hacdias/filemanager.
 
 - FM_USERNAME: user
 - FM_PASSWORD: password
+- FM_PORT: port (default: 80)
 
 - /docker-entrypoint-init
 
