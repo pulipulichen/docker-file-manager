@@ -1,7 +1,7 @@
 #echo 1212
 cp -af /filebrowser.db.clone /filebrowser.db
 filebrowser config init
-cat /config/config.json
+#cat /config/config.json
 filebrowser users add $FM_USERNAME $FM_PASSWORD
 
 # 如果有資料夾，那就檢查有沒有對應的壓縮檔案

@@ -7,7 +7,7 @@ services:
     volumes: 
       - ./data:/data:rw
       - ./data:/data_source:rw
-      - ./data_target:/data_target:rw
+      - ./data_backup:/data_backup:rw
       - ./data_archive:/data_archive:rw
       #- ./scripts/:/config/:rw
       #- ./data/users.json.blank:/config/www/private/users.json.blank
