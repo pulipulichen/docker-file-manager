@@ -2,6 +2,7 @@ version: "3"
 services:
   app:
     build: .
+    #image: pudding/docker-file-manager:20220517-1450
     
     #image: maxime1907/filegator
     volumes: 
@@ -12,7 +13,7 @@ services:
       #- ./scripts/:/config/:rw
       #- ./data/users.json.blank:/config/www/private/users.json.blank
     ports:
-      - "8081:888"
+      - "8081:8080"
     environment:
        FM_USERNAME: user
        FM_PASSWORD: password

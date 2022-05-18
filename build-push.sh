@@ -1,4 +1,4 @@
-TAG=20220517-1450
+TAG=20220518-1118
 
 REPO=docker-file-manager
 
